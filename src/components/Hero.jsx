@@ -1,4 +1,4 @@
-import bgimage from "/bgimage.svg?url"
+import bgimage from "../assets/bgimage.svg"
 import { Parallax } from "react-parallax"
 import me from '../assets/me.png'
 

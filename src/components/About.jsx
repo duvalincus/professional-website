@@ -3,6 +3,11 @@ import Title from "./Title";
 import { Parallax } from "react-parallax";
 import clouds from "../assets/clouds.jpg";
 import resume from "../assets/resume.pdf";
+import ucr from "../assets/ucr.webp"
+import norcal from "../assets/norcal.webp"
+import circuit from "../assets/circuit.jpg"
+import img from "../assets/img.jpg"
+import droplets from "../assets/droplets.jpg"
 
 const About = () => {
   return (
@@ -15,27 +20,27 @@ const About = () => {
         <div className="flex m-5 justify-center">
           <AboutCard
             text="I'm a third year Computer Engineering major at UCR."
-            image="ucr.webp"
+            image={ucr}
           ></AboutCard>
           <AboutCard
             text="I'm from NorCal and I miss it a lot sometimes."
-            image="norcal.webp"
+            image={norcal}
           ></AboutCard>
         </div>
         <div className="flex m-5 justify-center">
           <AboutCard
             text="I'm interested in building computers, and hardware in general."
-            image="img.jpg"
+            image={img}
           />
           <AboutCard
             text="I'm shaky on circuits, but I liked arduino so I'd love to learn."
-            image="circuit.jpg"
+            image={circuit}
           />
         </div>
           <a href={resume} target="_blank">
             <AboutCard
               text="Here's my resume."
-              image="droplets.jpg"
+              image={droplets}
             >
             </AboutCard>
           </a>

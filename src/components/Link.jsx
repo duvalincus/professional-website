@@ -3,7 +3,7 @@ const Link = ({ link = "" , icon, text}) => {
   return (
     <button
       className="btn btn-secondary flex flex-row
-    transition ease-in-out hover:scale-105 duration-300"
+    transition ease-in-out hover:scale-105 duration-300 text-nowrap"
     >
       <a
         href={`${link}`}

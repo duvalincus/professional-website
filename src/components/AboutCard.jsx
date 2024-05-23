@@ -2,7 +2,7 @@
 const AboutCard = ({text, image}) => {
   return (
     <div
-        style={{ backgroundImage: `url(/${image})`}}
+        style={{ backgroundImage: `url(${image})`}}
         className="rounded-xl bg-fill flex justify-center items-center mx-5 min-w-1/4 max-w-1/4 
         transition ease-in-out hover:-translate-y-1 hover:scale-110 duration-300"
     >
