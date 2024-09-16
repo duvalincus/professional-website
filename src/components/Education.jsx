@@ -1,18 +1,24 @@
 import Title from "./Title";
-import ucrlogo  from '../assets/ucr.png'
-import scclogo  from '../assets/scc.webp';
-import clogo from '../assets/c++.svg'
-import arduino from "../assets/Arduino.svg";
-import js from "../assets/js.png";
-import mongodb from "../assets/mongodb.svg";
+import ucrlogo from "../assets/ucr.png";
+import scclogo from "../assets/scc.webp";
 import Dropdown from "react-bootstrap/Dropdown";
 import { Parallax } from "react-parallax";
-import russian from '../assets/russian.jpg'
-import isalogo from '../assets/isalogo.svg'
-import vexlogo from '../assets/vexlogo.svg'
-import reacticon from '../assets/React-icon.png'
+import russian from "../assets/russian.jpg";
+import { motion } from "framer-motion";
+import skills from "../data/skills";
+import projects from "../data/projects";
 
 const width = 100;
+
+const animationY = {
+  hidden: { opacity: 0, y: -30 },
+  show: { opacity: 1, y: 0 },
+};
+
+const animationX = {
+  hidden: { opacity: 0, x: -30 },
+  show: { opacity: 1, x: 0 },
+};
 
 const Education = () => {
   return (
@@ -21,8 +27,25 @@ const Education = () => {
         className="flex flex-col justify-center items-center h-screen"
         id="education"
       >
-        <Title text={"Education/Skills"} />
-        <div className="flex flex-row gap-5 justify-center items-center w-2/5 mt-5 m-2">
+        <motion.div
+          variants={animationY}
+          initial="hidden"
+          whileInView="show"
+          transition={{
+            delay: 0.2,
+            type: "tween",
+            duration: 0.5,
+          }}
+        >
+          <Title text={"Education/Skills"} />
+        </motion.div>
+        <motion.div
+          className="flex flex-row gap-5 justify-center items-center w-3/5 mt-5 m-2"
+          variants={animationX}
+          initial="hidden"
+          whileInView="show"
+          transition={{ delay: 0.4, duration: 0.5 }}
+        >
           <img src={ucrlogo} alt="ucr logo" width={120} />
           <div className="text-center">
             <p>
@@ -31,6 +54,7 @@ const Education = () => {
             <p>August 2022 - June 2025</p>
           </div>
           <p>BS Computer Engineering</p>
+          <p>3.94 GPA</p>
           <Dropdown>
             <Dropdown.Toggle variant="success" id="dropdown-basic">
               Classes Taken
@@ -45,9 +69,14 @@ const Education = () => {
               </Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
-        </div>
-        <p></p>
-        <div className="flex flex-row gap-5 justify-center items-center w-1/3 mt-3">
+        </motion.div>
+        <motion.div
+          className="flex flex-row gap-5 justify-center items-center w-3/5 mt-3"
+          variants={animationX}
+          initial="hidden"
+          whileInView="show"
+          transition={{ delay: 0.6, duration: 0.5 }}
+        >
           <img src={scclogo} width="120" alt="scc logo" />
           <div className="text-center">
             <p>
@@ -56,6 +85,7 @@ const Education = () => {
             <p>August 2020 - June 2022</p>
           </div>
           <p>Transfer Computer Science</p>
+          <p>4.0 GPA</p>
           <Dropdown>
             <Dropdown.Toggle variant="success" id="dropdown-basic">
               Classes Taken
@@ -66,60 +96,53 @@ const Education = () => {
               <Dropdown.Item href="#/action-3"></Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
-        </div>
-        <p className="text-2xl font-bold m-2 pb-2">Projects:</p>
-        <div className="flex flex-row justify-center items-center w-1/3 gap-3">
-          <a href="https://isa.ucrhighlanders.org/" target="_blank">
-            <img
-              src={isalogo}
-              width={100}
-              className="transition ease-in-out hover:-translate-y-1 hover:scale-110 duration-300"
-            />
-          </a>
-          <a
-            href="https://github.com/acm-ucr/vex-robotics-website"
-            target="_blank"
-          >
-            <img
-              src={vexlogo}
-              width={100}
-              className="transition ease-in-out hover:-translate-y-1 hover:scale-110 duration-300"
-            />
-          </a>
-        </div>
-        <p className="text-2xl font-bold m-2">Skills Developed:</p>
-        <div className="w-1/3 flex justify-center items-center gap-4">
-          <img
-            src={clogo}
-            alt="c++ logo"
-            width={width}
-            className="transition ease-in-out hover:-translate-y-1 hover:scale-110 duration-300"
-          />
-          <img
-            src={arduino}
-            alt="arduino logo"
-            width={width}
-            className="transition ease-in-out hover:-translate-y-1 hover:scale-110 duration-300"
-          />
-          <img
-            src={js}
-            alt="js logo"
-            width={width}
-            className="transition ease-in-out hover:-translate-y-1 hover:scale-110 duration-300"
-          />
-          <img
-            src={mongodb}
-            alt="mongo logo"
-            width={width}
-            className="transition ease-in-out hover:-translate-y-1 hover:scale-110 duration-300"
-          />
-          <img
-            src={reacticon}
-            alt="react logo"
-            width={width}
-            className="transition ease-in-out hover:-translate-y-1 hover:scale-110 duration-300"
-          />
-        </div>
+        </motion.div>
+        <motion.div
+          variants={animationX}
+          initial="hidden"
+          whileInView="show"
+          transition={{ delay: 1, duration: 0.5 }}
+        >
+          <p className="text-2xl font-bold m-2 pb-2 text-center">Projects:</p>
+          <div className="flex flex-row justify-center items-center gap-3">
+            {projects.map((project, index) => {
+              return (
+                <a href={project.link} target="_blank" key={index}>
+                  <img
+                    src={project.image}
+                    alt="project logo"
+                    width={width}
+                    className="transition ease-in-out hover:-translate-y-1 hover:scale-110 duration-300"
+                  />
+                </a>
+              );
+            })}
+          </div>
+        </motion.div>
+        <motion.div
+          variants={animationX}
+          initial="hidden"
+          whileInView="show"
+          transition={{ delay: 1.2, duration: 0.5 }}
+        >
+          <p className="text-2xl font-bold m-2 text-center">
+            Skills Developed:
+          </p>
+          <div className="flex justify-center items-center gap-4">
+            {skills.map((skill, index) => {
+              return (
+                <motion.div key={index}>
+                  <img
+                    src={skill.src}
+                    alt={skill.alt}
+                    width={width}
+                    className="transition ease-in-out hover:-translate-y-1 hover:scale-110 duration-300"
+                  />
+                </motion.div>
+              );
+            })}
+          </div>
+        </motion.div>
       </div>
     </Parallax>
   );

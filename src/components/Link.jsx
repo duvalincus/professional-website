@@ -1,5 +1,4 @@
-
-const Link = ({ link = "" , icon, text}) => {
+const Link = ({ link = "", icon, text }) => {
   return (
     <button
       className="btn btn-secondary flex flex-row

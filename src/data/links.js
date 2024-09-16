@@ -1,15 +1,13 @@
-
 const links = [
   {
     link: "https://github.com/duvalincus",
   },
   {
-    link: "https://www.linkedin.com/in/marco-navarro-4308a9142/"
+    link: "https://www.linkedin.com/in/marcoalnavarro/",
   },
   {
-    link: "mailto: mnava095@ucr.edu"
+    link: "mailto: marco.alberto.navarro@gmail.com",
   },
-  
 ];
 
 export default links;

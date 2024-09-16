@@ -1,12 +1,10 @@
-import About from './components/About';
-import Education from './components/Education';
-import Footer from './components/Footer';
-import Hero from './components/Hero';
-import Navigation from './components/Navigation'
-import Resume from './components/Resume';
+import About from "./components/About";
+import Education from "./components/Education";
+import Footer from "./components/Footer";
+import Hero from "./components/Hero";
+import Navigation from "./components/Navigation";
+import Resume from "./components/Resume";
 import "bootstrap/dist/css/bootstrap.min.css";
-
-
 
 function App() {
   return (
@@ -26,4 +24,4 @@ function App() {
   );
 }
 
-export default App
+export default App;

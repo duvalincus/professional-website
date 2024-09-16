@@ -2,12 +2,8 @@ import AboutCard from "./AboutCard";
 import Title from "./Title";
 import { Parallax } from "react-parallax";
 import clouds from "../assets/clouds.jpg";
-import resume from "../assets/resume.pdf";
-import ucr from "../assets/ucr.webp"
-import norcal from "../assets/norcal.webp"
-import circuit from "../assets/circuit.jpg"
-import img from "../assets/img.jpg"
-import droplets from "../assets/droplets.jpg"
+import { motion } from "framer-motion";
+import about from "../data/about";
 
 const About = () => {
   return (
@@ -16,37 +12,30 @@ const About = () => {
         className="flex flex-col justify-center items-center pt-10 h-screen"
         id="about"
       >
-        <Title text="About me" />
-        <div className="flex m-5 justify-center">
-          <AboutCard
-            text="I'm a third year Computer Engineering major at UCR."
-            image={ucr}
-          ></AboutCard>
-          <AboutCard
-            text="I'm from NorCal and I miss it a lot sometimes."
-            image={norcal}
-          ></AboutCard>
+        <motion.div
+          initial={{ opacity: 0, y: -30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2, duration: 0.5, type: "tween" }}
+        >
+          <Title text="About me" />
+        </motion.div>
+        <div className="grid m-5 grid-cols-2 items-center justify-items-center">
+          {about.map((fact, index) => {
+            return (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: -30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.3, duration: 0.5 }}
+              >
+                <AboutCard text={fact.text} image={fact.image}></AboutCard>
+              </motion.div>
+            );
+          })}
         </div>
-        <div className="flex m-5 justify-center">
-          <AboutCard
-            text="I'm interested in building computers, and hardware in general."
-            image={img}
-          />
-          <AboutCard
-            text="I'm shaky on circuits, but I liked arduino so I'd love to learn."
-            image={circuit}
-          />
-        </div>
-          <a href={resume} target="_blank">
-            <AboutCard
-              text="Here's my resume."
-              image={droplets}
-            >
-            </AboutCard>
-          </a>
       </div>
     </Parallax>
   );
-}
+};
 
-export default About
+export default About;

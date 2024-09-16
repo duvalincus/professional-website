@@ -1,9 +1,10 @@
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+import NavDropdown from "react-bootstrap/NavDropdown";
+import resume from "../assets/Resume (CS).pdf";
 
-function Navigation () {
+function Navigation() {
   return (
     <Navbar expand="lg" className="bg-body-tertiary w-full sticky-top">
       <Container>
@@ -14,6 +15,9 @@ function Navigation () {
             <Nav.Link href="#about">About Me</Nav.Link>
             <Nav.Link href="#resume">Experience</Nav.Link>
             <Nav.Link href="#education">Education</Nav.Link>
+            <Nav.Link href={resume} target="_blank">
+              Resume
+            </Nav.Link>
             <NavDropdown title="Contact" id="basic-nav-dropdown">
               <NavDropdown.Item
                 href="https://github.com/duvalincus"

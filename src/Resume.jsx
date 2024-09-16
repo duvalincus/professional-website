@@ -1,6 +1,6 @@
-import Title from './Title'
-import jobs from '../data/jobs'
-import Experience from './Experience';
+import Title from "./Title";
+import jobs from "../data/jobs";
+import Experience from "./Experience";
 
 const Resume = () => {
   return (
@@ -20,6 +20,6 @@ const Resume = () => {
       </div>
     </div>
   );
-}
+};
 
-export default Resume
+export default Resume;
