@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <div className="w-full bg-[#ebebebd8] h-[70px] flex flex-row justify-center items-center">
       <div className="flex flex-row justify-between w-5/6 text-lg items-center">
-        <p>&copy; 2024 Marco Navarro</p>
+        <p>&copy; 2025 Marco Navarro</p>
         <div className="flex flex-row gap-2">
           <Link link={links[0].link} icon={<FaGithub />} text="Github" />
           <Link link={links[1].link} icon={<CiLinkedin />} text="LinkedIn" />
